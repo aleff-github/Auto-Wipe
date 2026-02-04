@@ -1,1 +1,1 @@
-# Auto-Wipe
+AUTO WIPE
