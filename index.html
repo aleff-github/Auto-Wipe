@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auto Wipe - Chrome Extension</title>
+    <meta name="description"
+        content="Automatically wipe browsing history, cache, and download history on startup and/or when the last window closes." />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon16.png">
+</head>
+
+<body>
+    <main class="wrap">
+        <header class="hero">
+            <div class="brand">
+                <img class="logo" src="./assets/logo.png" alt="Auto Wipe logo" />
+                <div>
+                    <h1>Auto Wipe</h1>
+                    <p class="sub">
+                        Automatically clears <strong>history</strong>, <strong>cache</strong>, and <strong>download
+                            history</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cta">
+                <a class="btn primary" href="#install">Install</a>
+                <a class="btn" href="https://gist.github.com/aleff-github/66a367d997527371215329f07c4a7551">Privacy</a>
+                <a class="btn" href="../">Source</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <h2>What it does</h2>
+            <p>
+                Auto Wipe removes selected browsing data using simple triggers:
+                <strong>on browser startup</strong> and/or <strong>when the last window closes</strong> (best-effort).
+                It also includes a <em>"Wipe now"</em> button for manual cleanup.
+            </p>
+
+            <div class="grid">
+                <div class="mini">
+                    <h3>Removable data</h3>
+                    <ul>
+                        <li>Browsing history</li>
+                        <li>Cache (including cache storage)</li>
+                        <li>Download history</li>
+                    </ul>
+                </div>
+
+                <div class="mini">
+                    <h3>Triggers</h3>
+                    <ul>
+                        <li>Browser startup</li>
+                        <li>Last window closed (best-effort)</li>
+                        <li>"Wipe now" button</li>
+                    </ul>
+                </div>
+
+                <div class="mini">
+                    <h3>Settings</h3>
+                    <p class="muted">
+                        Preferences are stored in <code>chrome.storage.sync</code>, so they can sync across Chrome
+                        profiles.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="install">
+            <h2>Installation</h2>
+
+            <ol class="steps">
+                <li>
+                    <strong>From this repo (developer mode)</strong><br>
+                    <span class="muted">
+                        Download/clone the repository. In Chrome go to <em>Extensions</em> -> enable <em>Developer
+                            mode</em> ->
+                        <em>Load unpacked</em>, then select the project folder.
+                    </span>
+                </li>
+                <li>
+                    <strong>Chrome Web Store</strong><br>
+                    <span class="muted">
+                        <a href="https://chromewebstore.google.com/detail/agmkilecaldbomimhkmbnbnloedfdgcn">Install from here</a>
+                    </span>
+                </li>
+            </ol>
+
+            <p class="note">
+                Best-effort note: during Chrome shutdown, extension processes can be terminated quickly, so the "last
+                window closed"
+                wipe may not run in every scenario.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Permissions</h2>
+            <p class="muted">
+                Auto Wipe uses only the permissions needed to clear data and handle triggers/settings:
+                <code>browsingData</code>, <code>history</code>, <code>downloads</code>, <code>windows</code>,
+                <code>storage</code>.
+            </p>
+        </section>
+
+        <footer class="footer">
+            <p class="muted">
+                <span class="copyleft">&copy;</span> Auto Wipe - <a href="https://gist.github.com/aleff-github/66a367d997527371215329f07c4a7551">Privacy</a> - <a href="../LICENSE">License</a>
+            </p>
+        </footer>
+    </main>
+</body>
+
+</html>
